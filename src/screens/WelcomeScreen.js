@@ -4,22 +4,24 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 export default function WelcomeScreen({ navigation }) {
   return (
-    <SafeAreaView className="flex-1 flex justify-around bg-white">
+    <SafeAreaView className="flex-1 flex justify-around bg-mycolor">
 
       <View className="space-y-2">
-        <Text style={{fontSize: wp(10)}} className="text-center font-bold text-grey-700">Daii</Text>
+        <Text style={{fontSize: wp(10)}} className="text-center font-bold text-grey-700">DAII</Text>
         <Text style={{fontSize: wp(4)}} className="text-center tracking-wider text-grey-600 font-semibold">The AI Assistant</Text>
       </View>
 
       <View className="flex-row justify-center">
-        <Image source={require('../../assets/images/bot.png')} style={{width: wp(75), height: wp(75)}}/>
+        <Image source={require('../../assets/images/yello-bot-smiling-transformed.png')} style={{width: wp(75), height: wp(75), transform: [{ scale: 1.5 }] }}/>
       </View>
 
       <TouchableOpacity 
         onPress={() => navigation.navigate('Home')} 
-        className="bg-emerald-600 mx-5 p-4 rounded-2xl"
+        className="items-center"
       >
-        <Text style={{fontSize: wp(6)}} className="text-center font-bold text-white">Get Started</Text>
+        <View style={{backgroundColor: '#fcc51a', width: wp(45)}} className="bg-buttoncolor mx-5 p-4 rounded-full flex flex-row items-center">
+          <Text style={{width: wp(35), fontSize: wp(6)}} className="p-0 m-0 text-center font-bold text-white">Go</Text>
+        </View>
       </TouchableOpacity>
 
     </SafeAreaView>
